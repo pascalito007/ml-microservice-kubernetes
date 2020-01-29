@@ -1,6 +1,3 @@
-# ml-microservice-kubernetes
-Operationalize a Machine Learning Microservice API
-
 [![CircleCI](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes.svg?style=svg)](https://github.com/pascalito007/ml-microservice-kubernetes)
 
 ## Project Overview
