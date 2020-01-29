@@ -2,7 +2,7 @@
 Operationalize a Machine Learning Microservice API
 
 [![CircleCI](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes.svg?style=svg)](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes)
-[![CircleCI](https://circleci.com/gh/magmax007/UdacityCDProject5.svg?style=svg)](https://circleci.com/gh/magmax007/UdacityCDProject5)
+[![CircleCI](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes.svg?style=svg)](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes)
 
 ## Project Overview
 
