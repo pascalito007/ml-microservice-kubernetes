@@ -1,1 +1,39 @@
-<paste log output from Kubernetes-mediated prediction, here>
+mewejp@MBPdeMEENEMESSE project-ml-microservice-kubernetes % ./run_kubernetes.sh
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+Error from server (AlreadyExists): deployments.apps "flaskapp" already exists
+NAME                       READY   STATUS    RESTARTS   AGE
+flaskapp-fb99455c5-9cbdk   1/1     Running   0          89s
+Unable to listen on port 8000: Listeners failed to create with the following errors: [Unable to create listener: Error listen tcp4 127.0.0.1:8000: bind: address already in use Unable to create listener: Error listen tcp6 [::1]:8000: bind: address already in use]
+error: Unable to listen on any of the requested ports: [{8000 80}]
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/usr/local/lib/python3.7/site-packages/sklearn/externals/joblib/externals/cloudpickle/cloudpickle.py:47: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.0. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.0. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+/usr/local/lib/python3.7/site-packages/sklearn/externals/joblib/externals/cloudpickle/cloudpickle.py:47: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.0. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.0. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Debugger is active!
+ * Debugger PIN: 231-779-307
+[2020-02-01 23:03:02,900] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-02-01 23:03:02,912] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-02-01 23:03:02,920] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-02-01 23:03:02,922] INFO in app: {'prediction': [20.35373177134412]}
+127.0.0.1 - - [01/Feb/2020 23:03:02] "POST /predict HTTP/1.1" 200 -
+mewejp@MBPdeMEENEMESSE project-ml-microservice-kubernetes %

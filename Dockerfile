@@ -6,7 +6,7 @@ WORKDIR /app
 
 ## Step 2:
 # Copy source code to working directory
-COPY . flask_app/web.py /app/
+COPY . app.py /app/
 
 ## Step 3:
 # Install packages from requirements.txt
@@ -20,5 +20,5 @@ EXPOSE 80
 
 ## Step 5:
 # Run app.py at container launch
-CMD ["python", "web.py"]
+CMD ["python", "app.py"]
 

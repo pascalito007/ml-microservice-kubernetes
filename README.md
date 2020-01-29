@@ -3,44 +3,45 @@ Operationalize a Machine Learning Microservice API
 
 [![pascalito007](https://circleci.com/gh/pascalito007/ml-microservice-kubernetes.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 
-## Project Overview
+## Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project project is to operationalize a Machine Learning Microservice API. 
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+There is a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). 
+The Python flask app called `app.py` serves out predictions (inference) about housing prices through API calls.
 
-### Project Tasks
+## Project files
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+1. `.circleci/config.yml`: Circleci required configuration file for the pipeline
+2. `Makefile`: Includes environment setup and lint tests
+3. `app.py`: The laskapp file
+4. `Dockerfile`: To containerize the flaskapp application
+5. `docker_out.txt` and `kubernetes_out.txt`: Some sample results of predictions
+6. `run_docker.sh`: Docker running locally
+7. `run_kubernetes.sh`: Tags and uploads an image to Docker Hub
+8. `upload_docker.sh`: Tags and uploads an image to Docker Hub
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
----
-
-## Setup the Environment
+## Setup your environment
 
 * Create a virtualenv and activate it
+
+```bash
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
+```
+
 * Run `make install` to install the necessary dependencies
+
+While you still have your `.devops` environment activated, install:
+* Docker
+* Hadolint
+* Kubernetes ([Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) if you want to run Kubernetes locally)
 
 ### Running `app.py`
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+1. Run in Docker:  `./run_docker.sh`
+2. Run in Kubernetes:  `./run_kubernetes.sh`
 
-### Kubernetes Steps
-
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+## The front end application
+There is a front end application that contains an interface for user to make some prediction, [available at this repository](https://github.com/pascalito007/prediction-front) 
 
