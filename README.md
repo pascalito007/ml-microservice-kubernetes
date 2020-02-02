@@ -7,14 +7,13 @@ Operationalize a Machine Learning Microservice API
 
 This project project is to operationalize a Machine Learning Microservice API. 
 
-There is a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). 
-The Python flask app called `app.py` serves out predictions (inference) about housing prices through API calls.
+There is a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. Read more about the data taken from kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). 
 
 ## Project files
 
 1. `.circleci/config.yml`: Circleci required configuration file for the pipeline
 2. `Makefile`: Includes environment setup and lint tests
-3. `app.py`: The laskapp file
+3. `app.py`: The Python flask app serves out predictions (inference) about housing prices through API calls.
 4. `Dockerfile`: To containerize the flaskapp application
 5. `docker_out.txt` and `kubernetes_out.txt`: Some sample results of predictions
 6. `run_docker.sh`: Docker running locally
